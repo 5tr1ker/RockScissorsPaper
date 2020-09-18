@@ -100,7 +100,8 @@ public class Core{
 					System.out.println(" <2> .  Games is total 3 round , if you get 2 point, you win");
 					System.out.println(" <3> .  This programm can Save, Reload funtion");
 					System.out.println(" <4> .  You can see statistics, total games , winning rate ");
-					System.out.println("\t<<<Statistic>>>");
+			   case 3 :
+				   System.out.println("\t<<<Statistic>>>");
 					System.out.println("Total Rocks Games:: " + Games.TR + "\tWins ::" + Games.WR + "\t Defeat::" + (Games.TR - Games.WR));
 					System.out.println("Total Scissors Games:: " + Games.TS + "\tWins ::" + Games.WS + "\t Defeat::" + (Games.TS - Games.WS));
 					System.out.println("Total Papers Games:: " + Games.TP + "\tWins ::" + Games.WP + "\t Defeat::" + (Games.TP - Games.WP));
@@ -126,11 +127,8 @@ public class Core{
 					{
 						System.out.println("Papers Winning Rate :: " + (double)Games.WP / (double)Games.TP * 100 + "%");
 					}
-				   break;
-			   case 3 :
-				   Data.stat();
-				   main(args);
-			   }while(Main.choice < 3);
+					
+			   }while(a < 3);
 			   
 			   }
 		   }
