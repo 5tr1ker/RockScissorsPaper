@@ -8,36 +8,39 @@ public class Core{
 	static Scanner scan = new Scanner(System.in);
 	   private static  int Random;
 	   public static int Input;
-	   static int a = 0;
-	   static int TR= 0;			//total Rocks
-	   static int TS= 0;			//total scissors
-	   static int TP= 0;			//total papers
-	   static int WR= 0;			//win rocks
-	   static int WS= 0;			//win scissors
-	   static int WP= 0;			//win  papers
-	   static int coin = 20;	
-	   static int Max_coin = 0;		//you have a highest score(coin)
-	   static int betting = 0;		// betting coin
-	   public Core() {
-	   }
+
+
 		   public static void main(String[] args) {
+			    int a = 0;
+			    int TR= 0;			//total Rocks
+			    int TS= 0;			//total scissors
+			   int TP= 0;			//total papers
+			    int WR= 0;			//win rocks
+			    int WS= 0;			//win scissors
+			    int WP= 0;			//win  papers
+			    int coin = 20;	
+			    int Max_coin = 0;		//you have a highest score(coin)
+			    int betting = 0;		// betting coin
 			   @SuppressWarnings("resource")
 			      Scanner scan = new Scanner(System.in); // This is a main
-			      System.out.println("Welcome to games world");
-			      System.out.println("[Rock_paper_scissors]");
-			      System.out.println("You have" + Games.coin + " Coins!!");
-			      System.out.println("Please choose::");
-			      
-			      System.out.println("1 . Games Start");
-			      System.out.println("2.  How to play?");
-			      System.out.println("3.  Statisitc");
-			      System.out.println("4.  Exit");
-			      System.out.println("<If out-of-range value requires re-input.>");
-			      
-			      do {                      // if user input out of range , than System requiers re input.
-			      a = scan.nextInt();
-			      } while( a < 0 || a > 4);
-			do
+			   do {
+				   
+			   do {
+				      System.out.println("Welcome to games world");
+				      System.out.println("[Rock_paper_scissors]");
+				                            // if user input out of range , than System requiers re input.
+				      System.out.println("You have" + Games.coin + " Coins!!");
+				      System.out.println("Please choose::");
+				      
+				      System.out.println("1 . Games Start");
+				      System.out.println("2.  How to play?");
+				      System.out.println("3.  Statisitc");
+				      System.out.println("4.  Exit");
+				      System.out.println("<If out-of-range value requires re-input.>");
+				      
+				      a = scan.nextInt();
+			   } while( a < 0 || a > 4);
+
 			   switch (a) {
 			   case 1 :
 				   int player_score = 0;
@@ -92,7 +95,7 @@ public class Core{
 			        	coin -= betting;
 			        	betting = 0;
 			        }
-			        
+			        a = 0;
 				   break;
 			   case 2 :
 				   System.out.println("how to play?");
@@ -100,6 +103,8 @@ public class Core{
 					System.out.println(" <2> .  Games is total 3 round , if you get 2 point, you win");
 					System.out.println(" <3> .  This programm can Save, Reload funtion");
 					System.out.println(" <4> .  You can see statistics, total games , winning rate ");
+					a = 0;
+					break;
 			   case 3 :
 				   System.out.println("\t<<<Statistic>>>");
 					System.out.println("Total Rocks Games:: " + Games.TR + "\tWins ::" + Games.WR + "\t Defeat::" + (Games.TR - Games.WR));
@@ -127,8 +132,11 @@ public class Core{
 					{
 						System.out.println("Papers Winning Rate :: " + (double)Games.WP / (double)Games.TP * 100 + "%");
 					}
-					
-			   }while(a < 3);
-			   
+					a = 0;
+					break;
 			   }
-		   }
+			   } while( a!=4);
+			     }
+		   
+			 }
+
